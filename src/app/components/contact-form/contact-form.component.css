@@ -1,3 +1,6 @@
 .hidden {
   display: none;
 }
+.thank-you {
+  min-height: 1em;
+}
