@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ContactFormService } from "../../services/contact-form.service";
+import { TypewriteService } from "../../services/typewrite.service";
 
 @Component({
   selector: "app-contact-form",
@@ -10,8 +11,13 @@ import { ContactFormService } from "../../services/contact-form.service";
 export class ContactFormComponent implements OnInit {
   contactForm: FormGroup;
   thankYouMessage: string = "";
+  signature = "Alan";
+  typeWriter;
 
-  constructor(private contactFormService: ContactFormService) {}
+  constructor(
+    private contactFormService: ContactFormService,
+    private typeWriter$: TypewriteService
+  ) {}
 
   ngOnInit() {
     this.contactForm = new FormGroup({
@@ -37,9 +43,9 @@ export class ContactFormComponent implements OnInit {
 
     this.thankYouMessage =
       "Thank you for your submission. I will be in contact shortly.";
-    // setInterval(() => {
-    //   this.typeWriter = this.typeWriter$.typeWriter(this.signature);
-    // }, 1000);
+    setInterval(() => {
+      this.typeWriter = this.typeWriter$.typeWriter(this.signature);
+    }, 1000);
 
     this.contactForm.reset();
     setTimeout(() => {

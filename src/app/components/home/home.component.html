@@ -1,5 +1,8 @@
 <div class="col">
-  <p>
-    home works!
-  </p>
+  <div>
+    <p>
+      Welcome to <span *ngIf="!typeWriter">BUZZ</span>
+      {{ typeWriter | async }} DELIVERY NETWORK.
+    </p>
+  </div>
 </div>

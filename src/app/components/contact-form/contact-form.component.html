@@ -64,7 +64,7 @@
   </div>
 </div>
 
-<div *ngIf="thankYouMessage">
+<div *ngIf="thankYouMessage" class="thank-you">
   <p>{{ thankYouMessage }}</p>
   <p *ngIf="!typeWriter">Alan</p>
   <p>{{ typeWriter | async }}</p>
