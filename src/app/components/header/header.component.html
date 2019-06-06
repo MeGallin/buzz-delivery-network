@@ -1,31 +1,60 @@
-<nav class="border navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/home">LOGO</a>
+<header>
+  <nav class="border navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="/home">LOGO</a>
 
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-    (click)="toggleNavbar()"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="toggleNavbar()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <div
-    class="collapse navbar-collapse"
-    id="navbarSupportedContent"
-    [ngClass]="{ show: navbarOpen }"
-  >
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active" (click)="toggleNavbar()">
-        <a class="nav-link" routerLink="/about">About </a>
-      </li>
-      <li class="nav-item active" (click)="toggleNavbar()">
-        <a class="nav-link" routerLink="/contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      [ngClass]="{ show: navbarOpen }"
+    >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active" (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/about">About </a>
+        </li>
+        <li class="nav-item active" (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a
+            class="nav-link"
+            routerLink="/members"
+            *ngIf="auth.isAuthenticated()"
+            >Members</a
+          >
+        </li>
+
+        <a
+          class="nav-link"
+          href="#"
+          (click)="auth.login()"
+          *ngIf="!auth.isAuthenticated()"
+          >Log-In
+        </a>
+        <a
+          class="nav-link"
+          href="#"
+          (click)="auth.logout()"
+          *ngIf="auth.isAuthenticated()"
+          >Log-Out
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <div class="showLoggedIn" *ngIf="auth.isAuthenticated()"></div>
+  <div class="showLoggedOut" *ngIf="!auth.isAuthenticated()"></div>
+</header>

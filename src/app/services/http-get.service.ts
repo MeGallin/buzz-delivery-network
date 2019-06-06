@@ -8,8 +8,9 @@ export class HttpGetService {
   constructor(private httpGet$: HttpClient) {}
 
   getContent() {
-    const bulletinUrl = "../php/news/footer.txt";
-    // const bulletinUrl_local = "../../php/news/footer.txt";
-    return this.httpGet$.get(bulletinUrl, { responseType: "text" });
+    // const bulletinUrl = "../php/news/footer.txt";
+    const bulletinUrl_local = "../assets/footer.txt";
+
+    return this.httpGet$.get(bulletinUrl_local, { responseType: "text" });
   }
 }
