@@ -3,6 +3,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { ContactFormComponent } from "./components/contact-form/contact-form.component";
+import { MembersComponent } from "./components/members/members.component";
+import { AuthGuard } from "./auth.guard";
+import { CallbackComponent } from "./components/callback/callback.component";
 
 const routes: Routes = [
   {
@@ -21,6 +24,15 @@ const routes: Routes = [
   {
     path: "contact",
     component: ContactFormComponent
+  },
+  {
+    path: "members",
+    component: MembersComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "callback",
+    component: CallbackComponent
   },
   {
     path: "**",

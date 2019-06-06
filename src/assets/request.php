@@ -2,13 +2,10 @@
 // error_reporting(E_ALL ^ E_NOTICE);
 
 $postdata = file_get_contents("php://input");
-
 if(isset($postdata) && !empty($postdata)) {
-    $_REQUEST = json_decode($postdata, true);
+    $_REQUEST = json_decode($postdata, true);  
 
-    
-
-$my_email = "alan@chilidog.co.za,me@garyallin.uk";
+$my_email = "me@garyallin.uk, alan@chilidog.co.za, mark@acegarage.co.za";
 $from_email = "";
 $continue = "http://www.garyallin.uk";
 $errors = array();
@@ -17,8 +14,6 @@ $errors = array();
 if(isset($_REQUEST['hiddenName']) && !empty($_REQUEST['hiddenName'])) {
     die('You are not human!' . '<a href="http://www.yahoo.com"> Click here to try again</a>');
    }
-
-
 
 // Remove $_COOKIE elements from $_REQUEST.
 if(count($_COOKIE)){foreach(array_keys($_COOKIE) as $value){unset($_REQUEST[$value]);}}
