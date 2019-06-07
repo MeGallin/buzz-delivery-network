@@ -1,11 +1,22 @@
+.logo-size {
+  /* Ratio = 567 / 552 = 1.027 */
+  width: 82px;
+  height: 80px;
+}
+.navbar {
+  padding: 0 0.5em;
+}
+.navbar-background-colour {
+  background-color: var(--buzz-white);
+}
 .showLoggedIn {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: greenyellow;
 }
 
 .showLoggedOut {
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: crimson;
 }
