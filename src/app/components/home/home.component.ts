@@ -7,7 +7,7 @@ import { TypewriteService } from "../../services/typewrite.service";
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  signature = "BUZZ";
+  signature = "BuzZ";
   typeWriter;
 
   constructor(private typeWriter$: TypewriteService) {}
