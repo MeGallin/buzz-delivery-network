@@ -8,9 +8,17 @@ import { Component, OnInit } from "@angular/core";
 export class BannerComponent implements OnInit {
   constructor() {}
 
-  images = [1, 2, 3].map(
-    () => `https://picsum.photos/2200/360?random&t=${Math.random()}`
-  );
+  array = [
+    "../../assets/images/responsive.png",
+    "../../assets/images/responsive.png",
+    "../../assets/images/responsive.png"
+  ];
+
+  // images = [1, 2, 3].map(array => console.log(image));
+
+  images = this.array.map(img => {
+    return img;
+  });
 
   ngOnInit() {}
 }

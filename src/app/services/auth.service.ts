@@ -6,21 +6,21 @@ import * as auth0 from "auth0-js";
 
 @Injectable()
 export class AuthService {
-  auth0 = new auth0.WebAuth({
-    clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
-    domain: "dev-c-3865r5.eu.auth0.com",
-    responseType: "token id_token",
-    redirectUri: "http://localhost:4200/callback",
-    scope: "openid"
-  });
-
   // auth0 = new auth0.WebAuth({
   //   clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
   //   domain: "dev-c-3865r5.eu.auth0.com",
   //   responseType: "token id_token",
-  //   redirectUri: "http://dev.buzzdeliverynetwork.co.za/#/callback",
-  //   scope: "openid"
+  //   redirectUri: "http://localhost:4200/callback",
+  //   scope: "openid profile"
   // });
+
+  auth0 = new auth0.WebAuth({
+    clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
+    domain: "dev-c-3865r5.eu.auth0.com",
+    responseType: "token id_token",
+    redirectUri: "http://dev.buzzdeliverynetwork.co.za/#/callback",
+    scope: "openid profile"
+  });
 
   userProfile: any;
 
@@ -31,7 +31,6 @@ export class AuthService {
   }
 
   public handleAuthentication(): void {
-    console.log(this.auth0);
     this.auth0.parseHash((err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = "#";
@@ -69,4 +68,23 @@ export class AuthService {
     const expiresAt = JSON.parse(localStorage.getItem("expires_at") || "{}");
     return new Date().getTime() < expiresAt;
   }
+
+  public getProfile(cb): void {
+    if (!localStorage.getItem("access_token")) {
+      throw new Error("Access token must exist to fetch profile");
+    }
+
+    const self = this;
+    this.auth0.client.userInfo(
+      localStorage.getItem("access_token"),
+      (err, profile) => {
+        if (profile) {
+          self.userProfile = profile;
+        }
+        cb(err, profile);
+      }
+    );
+  }
 }
+
+//https://github.com/auth0-samples/auth0-angular-samples
