@@ -1,8 +1,119 @@
-<div class="col">
-  <div>
-    <p>
-      Welcome to <span *ngIf="!typeWriter">BUZZ</span>
-      {{ typeWriter | async }} DELIVERY NETWORK.
-    </p>
+<section>
+  <app-banner></app-banner>
+  <div class="col-12">
+    <div class="container text-center">
+      <h1>
+        Welcome to <span *ngIf="!typeWriter">BUZZ</span>
+        <span class="typewriter-wrapper"> {{ typeWriter | async }}</span>
+        DELIVERY NETWORK.
+      </h1>
+      <div class="row align-items-center">
+        <div class="col-md-3">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/responsive.png"
+              alt=""
+            />
+          </span>
+          <div class="h5">RESPONSIVE</div>
+          <p>Fully responsive and mobile ready layouts & features.</p>
+        </div>
+
+        <div class="col-md-3">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/responsive.png"
+              alt=""
+            />
+          </span>
+          <div class="h5">POWERFUL</div>
+          <p>Fully responsive and mobile ready layouts & features.</p>
+        </div>
+
+        <div class="col-md-3">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/responsive.png"
+              alt=""
+            />
+          </span>
+          <div class="h5">CUSTOMIZABLE</div>
+          <p>Fully responsive and mobile ready layouts & features.</p>
+        </div>
+
+        <div class="col-md-3">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/responsive.png"
+              alt=""
+            />
+          </span>
+          <div class="h5">QUALITY</div>
+          <p>Fully responsive and mobile ready layouts & features.</p>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="col-12 wrapper-background">
+    <div class="container text-white">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h5>BUILD CUSTOM PAGES</h5>
+          <p>
+            Build anything you want using Total’s easy Visual Composer drag &
+            drop page builder. With over 90+ builder modules for everything
+            including icons, accordions, headings, portfolio grids, social
+            links, image sliders, bulleted lists, WooCommerce carousels, feature
+            boxes, dividers, pricing tables and much more there’s nothing you
+            can’t create.
+          </p>
+          <span class="btn btn-outline-primary">GET STARTED</span>
+        </div>
+        <div class="col-md-6">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/temp-computer.png"
+              alt=""
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <span>
+            <img
+              class="img-fluid"
+              src="../assets/images/temp-computer.png"
+              alt=""
+            />
+          </span>
+        </div>
+        <div class="col-md-6">
+          <h5>BUILD CUSTOM PAGES</h5>
+          <p>
+            Build anything you want using Total’s easy Visual Composer drag &
+            drop page builder. With over 90+ builder modules for everything
+            including icons, accordions, headings, portfolio grids, social
+            links, image sliders, bulleted lists, WooCommerce carousels, feature
+            boxes, dividers, pricing tables and much more there’s nothing you
+            can’t create.
+          </p>
+          <span class="btn btn-outline-primary">GET STARTED</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-notice></app-notice>
+</section>

@@ -1,3 +1,19 @@
+/* ---- Variables ---- */
+:root {
+  --buzz-orange: rgba(247, 148, 30, 1);
+  --buzz-black: rgba(35, 31, 32, 1);
+  --buzz-white: ivory;
+}
+/* ---- Variables ---- */
+body {
+  color: var(--buzz-black);
+  background-color: var(--buzz-white);
+}
+
+.wrapper-background {
+  background-color: var(--buzz-black);
+}
+
 .border-temp {
   border: 1px solid green;
 }

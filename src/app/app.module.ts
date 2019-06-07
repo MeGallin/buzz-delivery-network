@@ -16,6 +16,10 @@ import { DateTimeComponent } from "./components/common/date-time/date-time.compo
 import { ContentFooterComponent } from "./components/content-footer/content-footer.component";
 import { MembersComponent } from "./components/members/members.component";
 import { CallbackComponent } from "./components/callback/callback.component";
+import { NoticeComponent } from "./components/common/notice/notice.component";
+import { BannerComponent } from "./components/common/banner/banner.component";
+
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -28,9 +32,17 @@ import { CallbackComponent } from "./components/callback/callback.component";
     DateTimeComponent,
     ContentFooterComponent,
     MembersComponent,
-    CallbackComponent
+    CallbackComponent,
+    NoticeComponent,
+    BannerComponent
   ],
-  imports: [BrowserModule, RoutesModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    RoutesModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgbModule
+  ],
   providers: [AuthService],
   bootstrap: [AppComponent]
 })

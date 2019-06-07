@@ -1,6 +1,13 @@
-<header>
-  <nav class="border navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" routerLink="/home">LOGO</a>
+<header class="sticky-top navbar-background-colour">
+  <nav class="container navbar navbar-expand-lg  navbar-background-colour">
+    <a class="navbar-brand" routerLink="/home">
+      <span
+        ><img
+          class="logo-size"
+          src="../assets/images/Buzz-Logo-1.png"
+          alt="Buzz Delivery Network Logo"
+      /></span>
+    </a>
 
     <button
       class="navbar-toggler"
@@ -20,16 +27,15 @@
       id="navbarSupportedContent"
       [ngClass]="{ show: navbarOpen }"
     >
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active" (click)="toggleNavbar()">
+      <div class="nav navbar-nav mr-auto"></div>
+      <ul class="nav navbar-nav navbar-right">
+        <li (click)="toggleNavbar()">
           <a class="nav-link" routerLink="/about">About </a>
         </li>
-        <li class="nav-item active" (click)="toggleNavbar()">
+        <li (click)="toggleNavbar()">
           <a class="nav-link" routerLink="/contact">Contact</a>
         </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li (click)="toggleNavbar()">
           <a
             class="nav-link"
             routerLink="/members"
@@ -38,23 +44,27 @@
           >
         </li>
 
-        <a
-          class="nav-link"
-          href="#"
-          (click)="auth.login()"
-          *ngIf="!auth.isAuthenticated()"
-          >Members Login
-        </a>
-        <a
-          class="nav-link"
-          href="#"
-          (click)="auth.logout()"
-          *ngIf="auth.isAuthenticated()"
-          >Log-Out
-        </a>
+        <li (click)="toggleNavbar()">
+          <a
+            class="nav-link"
+            href="#"
+            (click)="auth.login()"
+            *ngIf="!auth.isAuthenticated()"
+            >Members Login
+            <div class="showLoggedOut" *ngIf="!auth.isAuthenticated()"></div>
+          </a>
+        </li>
+        <li (click)="toggleNavbar()">
+          <a
+            class="nav-link"
+            href="#"
+            (click)="auth.logout()"
+            *ngIf="auth.isAuthenticated()"
+            >Log-Out
+            <div class="showLoggedIn" *ngIf="auth.isAuthenticated()"></div>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
-  <div class="showLoggedIn" *ngIf="auth.isAuthenticated()"></div>
-  <div class="showLoggedOut" *ngIf="!auth.isAuthenticated()"></div>
 </header>
