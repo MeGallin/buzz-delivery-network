@@ -6,6 +6,10 @@ import { ContactFormComponent } from "./components/contact-form/contact-form.com
 import { MembersComponent } from "./components/members/members.component";
 import { AuthGuard } from "./auth.guard";
 import { CallbackComponent } from "./components/callback/callback.component";
+import { BuzzOnlineSystemsComponent } from "./components/buzz-online-systems/buzz-online-systems.component";
+import { SpecialistNetworkComponent } from "./components/specialist-network/specialist-network.component";
+import { OnlineAndDeliveryNetworkComponent } from "./components/online-and-delivery-network/online-and-delivery-network.component";
+import { CallCentreComponent } from "./components/call-centre/call-centre.component";
 
 const routes: Routes = [
   {
@@ -16,6 +20,22 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent
+  },
+  {
+    path: "online-systems",
+    component: BuzzOnlineSystemsComponent
+  },
+  {
+    path: "specialist-network",
+    component: SpecialistNetworkComponent
+  },
+  {
+    path: "call-centre",
+    component: CallCentreComponent
+  },
+  {
+    path: "online-and-delivery-network",
+    component: OnlineAndDeliveryNetworkComponent
   },
   {
     path: "about",

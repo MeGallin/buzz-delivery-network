@@ -20,6 +20,10 @@ import { NoticeComponent } from "./components/common/notice/notice.component";
 import { BannerComponent } from "./components/common/banner/banner.component";
 
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { BuzzOnlineSystemsComponent } from './components/buzz-online-systems/buzz-online-systems.component';
+import { SpecialistNetworkComponent } from './components/specialist-network/specialist-network.component';
+import { OnlineAndDeliveryNetworkComponent } from './components/online-and-delivery-network/online-and-delivery-network.component';
+import { CallCentreComponent } from './components/call-centre/call-centre.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     MembersComponent,
     CallbackComponent,
     NoticeComponent,
-    BannerComponent
+    BannerComponent,
+    BuzzOnlineSystemsComponent,
+    SpecialistNetworkComponent,
+    OnlineAndDeliveryNetworkComponent,
+    CallCentreComponent
   ],
   imports: [
     BrowserModule,
