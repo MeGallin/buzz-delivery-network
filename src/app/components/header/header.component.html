@@ -10,7 +10,7 @@
     </a>
 
     <button
-      class="navbar-toggler"
+      class="navbar-toggler border-dark"
       type="button"
       data-toggle="collapse"
       data-target="#navbarSupportedContent"
@@ -19,7 +19,7 @@
       aria-label="Toggle navigation"
       (click)="toggleNavbar()"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon icon-bar border-dark"></span>
     </button>
 
     <div
@@ -30,10 +30,31 @@
       <div class="nav navbar-nav mr-auto"></div>
       <ul class="nav navbar-nav navbar-right">
         <li (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/home">Home </a>
+        </li>
+        <li (click)="toggleNavbar()">
           <a class="nav-link" routerLink="/about">About </a>
         </li>
         <li (click)="toggleNavbar()">
           <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+        <li (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/online-systems"
+            >BuzZ Online Systems
+          </a>
+        </li>
+        <li (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/specialist-network"
+            >Specialist Network
+          </a>
+        </li>
+        <li (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/online-and-delivery-network"
+            >Online & Delivery Network
+          </a>
+        </li>
+        <li (click)="toggleNavbar()">
+          <a class="nav-link" routerLink="/call-centre">Call Centre </a>
         </li>
         <li (click)="toggleNavbar()">
           <a
