@@ -1,15 +1,82 @@
-<div class="wrapper-background col text-center">
-  <div class="container">
-    <div class="row">
+<section>
+  <div class="containerXXX">
+    <div class="row border-temp">
       <div class="col-md">
-        <img src="http://via.placeholder.com/200" alt="" />
+        <h5>Contact Us</h5>
+        <app-contact-form></app-contact-form>
       </div>
       <div class="col-md">
+        <h5>Quick Links</h5>
+        <button class="btn btn-link" (click)="openTermsAndConditions(tAndCs)">
+          Terms and conditions
+        </button>
+        <a class="nav-link" routerLink="/contact">Request a consultation</a>
+        <a class="nav-link" routerLink="/contact">Agents are hiring</a>
+        <button class="btn btn-link" (click)="privacyPolicy(Privacy)">
+          Privacy policy
+        </button>
+        <a
+          class="nav-link"
+          href="#"
+          (click)="auth.login()"
+          *ngIf="!auth.isAuthenticated()"
+          >Buzz Delivery Network Store
+          <div class="showLoggedOut" *ngIf="!auth.isAuthenticated()"></div>
+        </a>
+        <a
+          class="nav-link"
+          href="#"
+          (click)="auth.logout()"
+          *ngIf="auth.isAuthenticated()"
+          >Log-Out
+          <div class="showLoggedIn" *ngIf="auth.isAuthenticated()"></div>
+        </a>
+        <a class="nav-link" routerLink="/contact">BuzZ Network Agents</a>
+        <a class="nav-link" href="https://www.garyallin.uk" target="_blank"
+          >BuzZ IT
+        </a>
+        <a class="nav-link" routerLink="/contact">Costing schedule</a>
+      </div>
+      <div class="col-md">
+        <h5>Social media area</h5>
         <p>{{ showContent }}</p>
-      </div>
-      <div class="col-md">
-        <img src="http://via.placeholder.com/200" alt="" />
       </div>
     </div>
   </div>
-</div>
+</section>
+
+<ng-template #tAndCs let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Terms and Conditions</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Terms and Conditions</p>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
+
+<ng-template #Privacy let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Privacy Policy</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="d('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Privacy</p>
+  </div>
+  <div class="modal-footer"></div>
+</ng-template>
