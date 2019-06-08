@@ -10,6 +10,7 @@ import { BuzzOnlineSystemsComponent } from "./components/buzz-online-systems/buz
 import { SpecialistNetworkComponent } from "./components/specialist-network/specialist-network.component";
 import { OnlineAndDeliveryNetworkComponent } from "./components/online-and-delivery-network/online-and-delivery-network.component";
 import { CallCentreComponent } from "./components/call-centre/call-centre.component";
+import { ContactPageComponent } from "./components/contact-page/contact-page.component";
 
 const routes: Routes = [
   {
@@ -43,7 +44,7 @@ const routes: Routes = [
   },
   {
     path: "contact",
-    component: ContactFormComponent
+    component: ContactPageComponent
   },
   {
     path: "members",
