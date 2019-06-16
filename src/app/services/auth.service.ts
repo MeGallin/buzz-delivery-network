@@ -6,21 +6,21 @@ import * as auth0 from "auth0-js";
 
 @Injectable()
 export class AuthService {
-  // auth0 = new auth0.WebAuth({
-  //   clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
-  //   domain: "dev-c-3865r5.eu.auth0.com",
-  //   responseType: "token id_token",
-  //   redirectUri: "http://localhost:4200/callback",
-  //   scope: "openid profile"
-  // });
-
   auth0 = new auth0.WebAuth({
     clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
     domain: "dev-c-3865r5.eu.auth0.com",
     responseType: "token id_token",
-    redirectUri: "http://dev.buzzdeliverynetwork.co.za/#/callback",
+    redirectUri: "http://localhost:4200/callback",
     scope: "openid profile"
   });
+
+  // auth0 = new auth0.WebAuth({
+  //   clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
+  //   domain: "dev-c-3865r5.eu.auth0.com",
+  //   responseType: "token id_token",
+  //   redirectUri: "http://dev.buzzdeliverynetwork.co.za/#/callback",
+  //   scope: "openid profile"
+  // });
 
   userProfile: any;
 
