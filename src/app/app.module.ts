@@ -26,8 +26,9 @@ import { OnlineAndDeliveryNetworkComponent } from "./components/online-and-deliv
 import { CallCentreComponent } from "./components/call-centre/call-centre.component";
 import { ContactPageComponent } from "./components/contact-page/contact-page.component";
 
-import { AgmCoreModule } from '@agm/core';
-import { MapComponent } from './components/common/map/map.component'
+import { AgmCoreModule } from "@agm/core";
+import { MapComponent } from "./components/common/map/map.component";
+import { AUTH_CONFIG_PROD } from "./__envProd";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { MapComponent } from './components/common/map/map.component'
     HttpClientModule,
     NgbModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC1lMvYDiFiKeHfaE14ApWj-M4ilf5qaPo'
+      apiKey: AUTH_CONFIG_PROD.googleAPIKey
     })
   ],
   providers: [AuthService],

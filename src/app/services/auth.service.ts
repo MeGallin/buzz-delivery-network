@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
+import { AUTH_CONFIG } from "../__env";
+import { AUTH_CONFIG_PROD } from "../__envProd";
 import * as auth0 from "auth0-js";
 
 (window as any).global = window;
@@ -7,18 +9,18 @@ import * as auth0 from "auth0-js";
 @Injectable()
 export class AuthService {
   auth0 = new auth0.WebAuth({
-    clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
-    domain: "dev-c-3865r5.eu.auth0.com",
+    clientID: AUTH_CONFIG.clientID,
+    domain: AUTH_CONFIG.domain,
     responseType: "token id_token",
-    redirectUri: "http://localhost:4200/callback",
+    redirectUri: AUTH_CONFIG.callbackURL,
     scope: "openid profile"
   });
 
   // auth0 = new auth0.WebAuth({
-  //   clientID: "9vQsIlYi3wnyzi3NYdaWboFjWtbmaEhZ",
-  //   domain: "dev-c-3865r5.eu.auth0.com",
+  //   clientID: AUTH_CONFIG_PROD.clientID,
+  //   domain: AUTH_CONFIG_PROD.domain,
   //   responseType: "token id_token",
-  //   redirectUri: "http://dev.buzzdeliverynetwork.co.za/#/callback",
+  //   redirectUri: AUTH_CONFIG_PROD.callbackURL,
   //   scope: "openid profile"
   // });
 
