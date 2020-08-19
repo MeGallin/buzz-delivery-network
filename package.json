@@ -25,7 +25,7 @@
     "angular-auth0": "^3.0.0",
     "angular2-jwt": "^0.2.3",
     "auth0-js": "^9.10.4",
-    "auth0-lock": "^11.16.2",
+    "auth0-lock": "^11.26.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
